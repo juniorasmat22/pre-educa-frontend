@@ -6,14 +6,14 @@ const publicRoutes = ['/auth/login', '/auth/register'];
 
 // 🚨 CAMBIO PARA NEXT.JS 16: Ahora se exporta "proxy"
 export function proxy(request: NextRequest) {
-  const token = request.cookies.get('refresh_token')?.value;
+  // 🌟 CAMBIADO: Ahora buscamos la cookie que el backend llamó "token"
+  const token = request.cookies.get('token')?.value; 
   const currentPath = request.nextUrl.pathname;
 
   const isPublicRoute = publicRoutes.some(route => currentPath.startsWith(route));
 
   if (!token && !isPublicRoute) {
     const loginUrl = new URL('/auth/login', request.url);
-    loginUrl.searchParams.set('redirect', currentPath);
     return NextResponse.redirect(loginUrl);
   }
 
@@ -29,7 +29,5 @@ export function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    '/((?!api|_next/static|_next/image|favicon.ico).*)',
-  ],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };

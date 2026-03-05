@@ -3,6 +3,7 @@ import { LoginRequest } from '../interfaces/auth/LoginRequest';
 import { ApiResponse } from '../interfaces/common/response';
 import { RefreshTokenRequest } from '../interfaces/token/RefreshTokenRequest';
 import { UsuarioRegistroRequest } from '../interfaces/usuario/UsuarioRegistroRequest';
+import { UsuarioResponse } from '../interfaces/usuario/UsuarioResponse';
 import { api } from '../lib/axios';
 
 
@@ -10,10 +11,7 @@ export const authService = {
   // Conecta con UsuarioController.java -> /api/v1/auth/login
   login: async (credentials: LoginRequest) => {
     // Definimos que la respuesta es un ApiResponse que contiene un AuthenticationResponse
-    const { data } = await api.post<ApiResponse<AuthenticationResponse>>(
-      '/auth/login', 
-      credentials
-    );
+    const { data } = await api.post<ApiResponse<UsuarioResponse>>('/auth/login', credentials);
     return data.data; // Retornamos directamente el DTO de autenticación
   },
 
