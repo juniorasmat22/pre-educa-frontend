@@ -1,6 +1,7 @@
+import { CarreraResponse } from "../carrera/CarreraResponse";
+
 export interface AreaResponse {
-  id: number;
-  nombre: string;
-  descripcion: string;
-  imagenUrl?: string;
+  idArea: number;
+  nombreArea: string;
+  carreras: CarreraResponse[];
 }
