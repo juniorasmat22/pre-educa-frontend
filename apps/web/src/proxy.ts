@@ -4,9 +4,8 @@ import type { NextRequest } from 'next/server';
 // Rutas que no requieren autenticación
 const publicRoutes = ['/auth/login', '/auth/register'];
 
-// 🚨 CAMBIO PARA NEXT.JS 16: Ahora se exporta "proxy"
+
 export function proxy(request: NextRequest) {
-  // 🌟 CAMBIADO: Ahora buscamos la cookie que el backend llamó "token"
   const token = request.cookies.get('token')?.value; 
   const currentPath = request.nextUrl.pathname;
 

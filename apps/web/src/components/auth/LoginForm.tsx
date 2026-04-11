@@ -34,9 +34,13 @@ export const LoginForm = () => {
       
       // 2. Guardamos solo la info del usuario en Zustand
       setUser(usuario);
-      
-      // 3. Redirigimos
-      router.push('/home');
+      console.log("Usuario autenticado:", usuario);
+      // 3. Redirigimos según el rol
+      if (usuario.rol?.nombre === 'ADMIN' || usuario.rol?.nombre === 'ROLE_ADMIN') {
+        router.push('/admin');
+      } else {
+        router.push('/home'); // Vista de alumno
+      }
     } catch (err: any) {
       setError(err.response?.data?.message || "Credenciales incorrectas");
     }

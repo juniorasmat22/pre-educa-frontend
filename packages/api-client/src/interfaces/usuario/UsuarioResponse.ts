@@ -4,5 +4,5 @@ export interface UsuarioResponse {
   id: number;
   nombre: string;
   email: string;
-  roles: RolResponse[];
+  rol: RolResponse;
 }

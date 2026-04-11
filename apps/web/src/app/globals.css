@@ -3,7 +3,32 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
+  /* Paleta Centralizada (Material Design 3) */
   --color-primary: #1a227f;
+  --color-primary-container: #1a227f;
+  --color-primary-fixed: #e0e0ff;
+  --color-primary-fixed-dim: #bec2ff;
+  --color-on-primary: #ffffff;
+  --color-on-primary-container: #ffffff;
+  
+  --color-secondary: #334155;
+  --color-secondary-fixed: #e2e8f0;
+  
+  --color-tertiary: #0f172a;
+  --color-on-tertiary: #ffffff;
+  
+  --color-background: #f6f6f8;
+  --color-on-background: #0f172a;
+  
+  --color-surface: #f6f6f8;
+  --color-surface-variant: #ffffff;
+  --color-on-surface: #0f172a;
+  --color-on-surface-variant: #64748b;
+  
+  --color-outline: #e2e8f0;
+  --color-outline-variant: #cbd5e1;
+  --color-error: #ef4444;
+
   /* Paleta Light */
   --color-background-light: #f6f6f8;
   /* Paleta Dark (Ajustada para mejor legibilidad) */
@@ -11,6 +36,7 @@
   --color-surface-dark: #1e1f35; /* Para el fondo de las tarjetas en modo oscuro */
   
   --font-display: "Inter", sans-serif;
+  --font-sans: "Inter", sans-serif;
 }
 
 @layer base {
