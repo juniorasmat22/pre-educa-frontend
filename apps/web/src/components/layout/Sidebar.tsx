@@ -11,10 +11,11 @@ export const Sidebar = () => {
 
   const navLinks = isAdmin 
     ? [
-        { href: '/admin', label: 'Inicio', icon: 'dashboard' },
-        { href: '#', label: 'Gestión de Áreas', icon: 'account_tree' },
-        { href: '#', label: 'Cursos', icon: 'school' },
-        { href: '#', label: 'Analítica', icon: 'analytics' },
+        { href: '/admin', label: 'Panel de Control', icon: 'dashboard' },
+        { href: '/admin/institucion', label: 'Config. Institucional', icon: 'account_balance' },
+        { href: '/admin/areas', label: 'Gestión de Áreas', icon: 'domain' },
+        { href: '/admin/carreras', label: 'Carreras', icon: 'school' },
+        { href: '/admin/cursos', label: 'Cursos', icon: 'book' },
       ]
     : [
         { href: '/home', label: 'Inicio', icon: 'dashboard' },
